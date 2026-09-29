@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        lookSpeed = PlayerPrefs.GetFloat("Sensitivity", 2f);
+
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 

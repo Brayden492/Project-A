@@ -11,9 +11,14 @@ public class HandGunFire : MonoBehaviour
     [SerializeField] AudioSource emptyGunSound;
     [SerializeField] GameObject objectDetection;
 
+
+    void OnEnable()
+    {
+        canFire = true;
+    }
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && !GameComplete.gameComplete)
         {
             if (canFire == true)
             {

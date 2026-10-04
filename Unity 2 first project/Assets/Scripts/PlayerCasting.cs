@@ -7,6 +7,8 @@ public class PlayerCasting : MonoBehaviour
     public static GameObject lookedAtObject;
     [SerializeField] float toTarget;
 
+    // Code provided by Jimmy Vegas with a few changes from me
+
     void Update()
     {
 
@@ -17,7 +19,7 @@ public class PlayerCasting : MonoBehaviour
         {
             distanceFromTarget = hit.distance;
             toTarget = hit.distance;
-
+            // added a way to detect the actual object that is being looked at
             lookedAtObject = hit.collider.gameObject;
 
             //Debug.Log(lookedAtObject.name);

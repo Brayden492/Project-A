@@ -8,6 +8,7 @@ public class HandgunPickup : MonoBehaviour
     [SerializeField] GameObject gunInHand;
     [SerializeField] GameObject gunMechanics;
 
+    // Jimmy Vegas supplied all of this code for picking up the gun
     void Update()
     {
         theDistance = PlayerCasting.distanceFromTarget;

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
+
+// Brogrammer supplied the code for the movement
 public class PlayerMovement : MonoBehaviour
 {
     public Camera playerCamera;

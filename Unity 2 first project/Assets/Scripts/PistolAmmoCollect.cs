@@ -3,17 +3,18 @@ using UnityEngine;
 public class PistolAmmoCollect : MonoBehaviour
 {
     [SerializeField] AudioSource ammoCollect;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+ 
     void Update()
     {
         
-    }
+    }  
+    // Code provided by Jimmy Vegas
 
     private void OnTriggerEnter(Collider other)
     {

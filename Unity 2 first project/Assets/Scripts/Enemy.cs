@@ -10,14 +10,17 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        // check if enemy is already dead or not
         if (isDead) return;
-
+        
+        // damage happens in the handgun fire script
         health -= damage;
 
+        // health bar changes with the health amount
         healthBar.fillAmount = (float)health / maxHealth;
 
-        Debug.Log("Enemy health: " + health);
-
+        // when enemy dies set Dead to true and destroy the game object to make it disappear 
+        // also update the killcount, only increment by one
         if (health <= 0)
         {
             isDead = true;

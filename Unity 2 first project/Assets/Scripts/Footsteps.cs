@@ -9,7 +9,8 @@ public class Footsteps : MonoBehaviour
     [SerializeField] AudioSource f4;
     [SerializeField] bool isStepping;
     [SerializeField] int soundNumber;
-
+    
+    //Code provided by Jimmy Vegas
   
     void Update()
     {

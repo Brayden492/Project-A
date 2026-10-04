@@ -11,13 +11,15 @@ public class HandGunFire : MonoBehaviour
     [SerializeField] AudioSource emptyGunSound;
     [SerializeField] GameObject objectDetection;
 
-
+    //Jimmy Vegas provided a lot of the ground work code
+    //and I added some things to it for firing the gun
     void OnEnable()
     {
         canFire = true;
     }
     void Update()
     {
+        // add the and game complete so player couldnt shoot gun after finishing game
         if (Input.GetMouseButton(0) && !GameComplete.gameComplete)
         {
             if (canFire == true)
@@ -30,16 +32,8 @@ public class HandGunFire : MonoBehaviour
                 else
                 {
                     canFire = false;
-
+                    // added the code to check what object is being looked at
                     objectDetection = PlayerCasting.lookedAtObject;
-                    //if (objectDetection != null)
-                    //{
-                    //    Debug.Log("Detected: " + objectDetection.name);
-                    //}
-                    //else
-                    //{
-                    //    Debug.Log("Nothing detected.");
-                    //}
 
                     StartCoroutine(FiringGun());
                 }
@@ -53,10 +47,13 @@ public class HandGunFire : MonoBehaviour
         extraCross.SetActive(true);
         GlobalAmmo.handgunAmmoCount -= 1;
         handgun.GetComponent<Animator>().Play("HandgunFire");
+        //this part is what I added for detecting enemies and then doing damage 
+        //when the enemy is clicked on
         if (objectDetection != null)
         {
             Enemy enemy = objectDetection.GetComponent<Enemy>();
 
+            // this is where to damage occurs
             if (enemy != null)
             {
                 enemy.TakeDamage(10);

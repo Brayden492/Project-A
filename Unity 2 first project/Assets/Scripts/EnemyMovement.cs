@@ -8,6 +8,7 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 startPosition;
     private bool movingForward = true;
 
+    // this puts the enemy in its starting position
     void Start()
     {
         startPosition = transform.position;
@@ -17,8 +18,10 @@ public class EnemyMovement : MonoBehaviour
     {
         if (movingForward)
         {
+            // move the enemy
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
+            // once it hits the set distance stop
             if (Vector3.Distance(startPosition, transform.position) >= distance)
             {
                 movingForward = false;
@@ -26,8 +29,10 @@ public class EnemyMovement : MonoBehaviour
         }
         else
         {
+            // move back
             transform.Translate(Vector3.back * speed * Time.deltaTime);
 
+            // once back stop
             if (Vector3.Distance(startPosition, transform.position) <= 0.1f)
             {
                 movingForward = true;
